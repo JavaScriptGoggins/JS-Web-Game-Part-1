@@ -1,10 +1,11 @@
 function newImage (src, leftPosition, bottomPosition) {
-    let image = document.createElement('img');
-    image.src = src;
-    image.style.position = 'fixed';
-    image.style.left = leftPosition;
-    image.style.bottom = bottomPosition;
-    document.body.append(image);
+    let object = document.createElement('img');
+    object.src = src;
+    object.style.position = 'fixed';
+    object.style.left = leftPosition;
+    object.style.bottom = bottomPosition;
+    document.body.append(object);
+    return object;
 }
 
 newImage('assets/green-character.gif', '100px', '100px');
@@ -17,16 +18,11 @@ newImage('assets/well.png', '500px', '425px');
 
 
 function newItem (src, leftPosition, bottomPosition) {
-    let item = document.createElement('img');
-    item.src = src;
-    item.style.position = 'fixed';
-    item.style.left = leftPosition;
-    item.style.bottom = bottomPosition;
-    document.body.append(item);
-    item.addEventListener('dblclick', function(){
-        item.remove()
+    let object=newImage(src, leftPosition, bottomPosition)
+    object.addEventListener("click", () => {
+        object.remove()
+
     }) 
-    return item;
     
 }
 
