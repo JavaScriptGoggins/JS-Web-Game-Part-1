@@ -23,13 +23,13 @@ function newItem (src, leftPosition, bottomPosition) {
     item.style.left = leftPosition;
     item.style.bottom = bottomPosition;
     document.body.append(item);
+    item.addEventListener('dblclick', function(){
+        item.remove()
+    }) 
     return item;
+    
 }
 
 newItem('assets/sword.png', '500px', '405px');
 newItem('assets/shield.png', '165px', '185px');
 newItem('assets/staff.png', '600px', '100px');
-
-sword.addEventListener('dblclick', function(event){
-    sword.remove()
-}) 
